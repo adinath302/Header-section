@@ -1,0 +1,16 @@
+@import 'tailwindcss';
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: 'Playfair Display', 'serif';
+}
+
+@layer components {
+  .primary-btn {
+    @apply bg-orange-400 text-white font-semibold p-5  rounded-md hover:!scale-110 duration-300 py-3 px-6;
+  }
+}

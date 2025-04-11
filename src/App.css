@@ -1,0 +1,171 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+a,
+li {
+  list-style: none;
+  text-decoration: none;
+  letter-spacing: 0.1rem;
+}
+
+.container {
+  max-width: 132rem;
+  height: 5rem;
+  position: relative;
+  margin: auto;
+}
+button {
+  cursor: pointer;
+  font-size: large;
+}
+
+header {
+  height: 5rem;
+  width: 100%;
+  background-color: #d4e6f1;
+}
+
+.grid {
+  display: grid;
+}
+
+.navbar-menu {
+  grid-template-columns: 0.5fr 1fr;
+  align-items: center;
+  height: 5rem;
+  padding: 0 3.2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.logo a {
+  color: #000;
+  font-weight: bold;
+}
+
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: flex-end;
+  font-size: 1rem;
+}
+
+nav ul li a {
+  color: #000;
+}
+
+/* Animation */
+li {
+  position: relative;
+}
+
+li::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: black;
+  transition: width 0.4s;
+}
+
+li:hover::after {
+  width: 100%;
+}
+
+.toggle-button {
+  display: none;
+}
+
+/* Dropdown Menu */
+.dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 2.5rem;
+  left: 0;
+  background-color: white;
+  width: 200px;
+  padding: 10px 0;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-menu li {
+  padding: 10px 20px;
+}
+
+.dropdown-menu li:hover {
+  background: #f0f0f0;
+}
+
+/* Mobile Menu */
+@media screen and (max-width: 998px) {
+  .toggle-button {
+    display: inline-block;
+    text-align: end;
+  }
+
+  .menu-web {
+    display: none;
+  }
+
+  .menu-mobile {
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0px 14px 28px gray;
+    z-index: 10;
+  }
+
+  .menu-mobile ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    line-height: 30px;
+  }
+
+  .dropdown-menu {
+    width: max-content;
+    min-width: 200px;
+    align-self: center;
+  }
+
+  .dropdown-menu li {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .dropdown-menu li:hover {
+    background-color: #f0f0f0;
+  }
+  .dropdown > div {
+    width: 100%;
+    justify-content: center;
+  }
+}
